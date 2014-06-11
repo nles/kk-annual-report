@@ -7,7 +7,7 @@ require 'extensions/kirby.rb'
 compass_config do |config|
   # Require any additional compass plugins here.
   config.add_import_path "bower_components/foundation/scss"
-  
+
   # Set this to the root of your project when deployed:
   config.http_path = "/"
   config.css_dir = "stylesheets"
@@ -90,19 +90,29 @@ set :images_dir, 'images'
 
 activate :livereload
 
+activate :kirby
+
 # Build-specific configuration
 configure :build do
-  activate :minify_css
+  #activate :minify_css
   #activate :minify_javascript
 
   # Enable cache buster
   activate :asset_hash
 
-  activate :kirby
 
   # Use relative URLs
   # activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+helpers do
+  def on_development &block
+    yield unless build?
+  end
+  def on_production &block
+    yield if build?
+  end
 end

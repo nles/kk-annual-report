@@ -10,7 +10,10 @@ title: Welcome to Middleman
     <div class="row">
       <div class="large-12 columns">
         <div class="callout panel">
-          <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
+          <p>
+<%= kirby_content_area %>
+<%= on_development { lorem.paragraph } %>
+          </p>
         </div>
       </div>
     </div>
@@ -111,14 +114,14 @@ title: Welcome to Middleman
     <h5>Try one of these buttons:</h5>
     <p><a href="#" class="small button">Simple Button</a><br/>
     <a href="#" class="small radius button">Radius Button</a><br/>
-    <a href="#" class="small round button">Round Button</a><br/>            
+    <a href="#" class="small round button">Round Button</a><br/>
     <a href="#" class="medium success button">Success Btn</a><br/>
     <a href="#" class="medium alert button">Alert Btn</a><br/>
-    <a href="#" class="medium secondary button">Secondary Btn</a></p>           
+    <a href="#" class="medium secondary button">Secondary Btn</a></p>
     <div class="panel">
       <h5>So many components, girl!</h5>
       <p>A whole kitchen sink of goodies comes with Foundation. Checkout the docs to see them all, along with details on making them your own.</p>
-      <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>          
+      <a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>
     </div>
   </div>
 </div>
