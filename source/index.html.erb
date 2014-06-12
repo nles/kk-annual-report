@@ -1,17 +1,15 @@
 ---
 title: Welcome to Middleman
 ---
-
 <div class="row">
   <div class="large-8 medium-8 columns">
     <h5>Here&rsquo;s your basic grid:</h5>
     <!-- Grid Example -->
-
     <div class="row">
       <div class="large-12 columns">
         <div class="callout panel">
           <p>
-<%= kirby_content_area %>
+<%= kirby_content_area('text') %>
 <%= on_development { lorem.paragraph } %>
           </p>
         </div>

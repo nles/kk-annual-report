@@ -3,10 +3,9 @@
     <nav id="mainmenu">
       <ul>
         <% on_development do %>
-          <li><a class="small button" href="/test">mock menu item</a></li>
-          <li><a class="small button" href="/test">another mock item</a></li>
+          <li><a class="small button" href="/index.html">mock menu item</a></li>
+          <li><a class="small button" href="/another_template.html">another mock item</a></li>
         <% end %>
-
         <% on_production do %>
           <%= kirby_start_menu %>
           <li><a class="small button <%= kirby_active_menu_item %>" href="<%= kirby_menu_item_url %>"><%= kirby_page_title %></a></li>
