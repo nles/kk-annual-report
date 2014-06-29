@@ -1,4 +1,4 @@
 .DS_Store
-panel/
-site/panel
+#panel/
+#site/panel
 docs
