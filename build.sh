@@ -1,7 +1,10 @@
 #!/bin/bash
-source /usr/local/rvm/scripts/rvm
+if [ -f /usr/local/rvm/scripts/rvm ]; then
+  source /usr/local/rvm/scripts/rvm
+fi
 bundle exec middleman build
-cp -a /var/www/html/ /home/www-admin/build_backups/html_`date +%s`
-rm -rf /var/www/html/!(content|site)
-mv ./build/* /var/www/html/
+cp -a /var/www/kirbys/koodiketo /var/www/kkmm/build_backups/html_`date +%s`
+#rm -rf /var/www/kirbys/koodiketo/!(content|site)
+find /var/www/kirbys/koodiketo/. -maxdepth 1 ! -name 'content' ! -name 'site' ! -name '.*' | xargs rm -rf
+mv ./build/* ./build/.* /var/www/kirbys/koodiketo
 rm -rf ./build/

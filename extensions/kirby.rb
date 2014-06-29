@@ -18,9 +18,11 @@ class Kirby < Middleman::Extension
         filename = (File.basename(f,'.*') == "index") ? "default" : File.basename(f,'.*')
         FileUtils.mv f, "#{templatedir}#{filename}.php"
       end
-      FileUtils.chown_R "www-admin", "www-data", app.root+"/"+app.build_dir+"/content/"
+      if `id www-admin > /dev/null 2>&1 && echo $?` == 0 && `id www-data > /dev/null 2>&1 && echo $?` == 0
+        FileUtils.chown_R "www-admin", "www-data", app.root+"/"+app.build_dir+"/content/"
+      end
       FileUtils.chmod_R 0775, app.root+"/"+app.build_dir+"/content/"
-    end 
+    end
   end
   helpers do
     def kirby_start_menu
